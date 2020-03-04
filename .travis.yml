@@ -3,5 +3,12 @@ node_js:
   - "7"
 install:
     - npm install newman
+    - npm install -S newman-reporter-htmlextra
 script:
-    - newman run test_collection.json -e new_variables.json
+    - newman run test_collection.json -e new_variables.json -r htmlextra --reporter-htmlextra-darkTheme
+    - mv *.html report.html
+deploy:
+  provider: releases
+  api_key: "ba63b7db0d25e2317cc000e1844fd9cdc47cfb41"
+  file: "./report.html"
+  skip_cleanup: true
