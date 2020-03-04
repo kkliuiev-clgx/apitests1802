@@ -298,7 +298,7 @@
 						"exec": [
 							"pm.test(\"Failed to add new nationality with non-unique name\", function () {",
 							"var responseData = JSON.parse(responseBody);",
-							"pm.response.to.have.status(500)&&pm.expect(responseData.code).to.eql(\"unique_key\")&&pm.expect(responseData.message).to.eql(\"Can not insert duplicate key in object. The duplicate key value is (\"+pm.environment.get(\"newNationality\")+\").\");",
+							"pm.response.to.have.status(500)&&pm.expect(responseData.message).to.eql(\"Can not insert duplicate key in object. The duplicate key value is (\"+pm.environment.get(\"newNationality\")+\").\");",
 							"});"
 						],
 						"type": "text/javascript"
