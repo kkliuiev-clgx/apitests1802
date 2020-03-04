@@ -2,6 +2,6 @@ language: node_js
 node_js:
   - "7"
 install:
-    - npm i
+    - npm install newman
 script:
     - newman run test_collection.json -e new_variables.json
