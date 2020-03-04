@@ -6,6 +6,7 @@ install:
     - npm install -S newman-reporter-htmlextra
 script:
     - newman run test_collection.json -e new_variables.json -r htmlextra --reporter-htmlextra-darkTheme
+    - ls
     - mv *.html report.html
 deploy:
   provider: releases
